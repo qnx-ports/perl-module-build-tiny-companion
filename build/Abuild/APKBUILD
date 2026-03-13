@@ -4,7 +4,7 @@
 maintainer="Celeste <cielesti@protonmail.com>"
 pkgname=perl-module-build-tiny
 pkgver=0.052
-pkgrel=0
+pkgrel=${pkgrel:-0}
 #_pkgreal is used by apkbuild-cpan to find modules at MetaCpan
 _pkgreal=Module-Build-Tiny
 pkgdesc="Tiny replacement for Module::Build"
@@ -42,6 +42,7 @@ package() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 7ba8575067f82ced30ec5bd0ec0f6cd602f052dcc57a27d96e904ec45cf10245bbe32b643208080154416f2591cc227f826e9c6b0c59821a3ba30caf5e737e84  Module-Build-Tiny-0.052.tar.gz
 "
